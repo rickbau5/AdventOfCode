@@ -5,8 +5,9 @@ package com.bau5.adventofcode
   */
 object Day01 {
   def main (args: Array[String]): Unit = {
-    println("Sum is " + sum(args.head))
-    println("Basement at " + toBasement(args.head))
+    val input = getInput(getClass)
+    println("Sum is " + sum(input.head))
+    println("Basement at " + toBasement(input.head))
   }
 
   def sum(input: String) = input.foldLeft(0) { (sig, c) =>
