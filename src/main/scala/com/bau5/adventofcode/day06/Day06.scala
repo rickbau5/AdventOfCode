@@ -1,6 +1,7 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.day06
 
-import com.bau5.adventofcode.Day06.Grid
+import com.bau5.adventofcode._
+import com.bau5.adventofcode.day06.Day06.Grid
 
 import scala.collection.mutable
 
