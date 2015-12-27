@@ -9,18 +9,18 @@ object Day13 {
     val mapped = getInput(getClass).map {
       case regex(name, disposition, units, neighbor) =>
         (name, neighbor) -> units.toInt * { if (disposition == "gain") 1 else -1 }
-    }.toMap
+    }.toMap.withDefaultValue(0)
     val guests = mapped.keys.flatMap { case (a, b) => Seq(a, b) }.toList
 
-    def findBest(people: List[String], happiness: Map[(String, String), Int]): Int = people.permutations
+    def findBest(people: List[String]): Int = people.permutations
       .map { combos =>
         combos.sliding(2)
           .map { arrangement =>
-            happiness.get((arrangement.head, arrangement.last)).get + happiness.get((arrangement.last, arrangement.head)).get
-          }.sum + happiness.get(combos.last, combos.head).get + happiness.get(combos.head, combos.last).get
+            mapped(arrangement.head, arrangement.last) + mapped(arrangement.last, arrangement.head)
+          }.sum + mapped(combos.last, combos.head) + mapped(combos.head, combos.last)
       }.max
-    println(findBest(guests, mapped))
-    println(findBest(guests ++ List("You"), mapped ++ guests.distinct.flatMap(e => List(("You", e) -> 0, (e, "You") -> 0))))
+    println(findBest(guests))
+    println(findBest(guests ++ List("You")))
   }
 
   val inputTest =
