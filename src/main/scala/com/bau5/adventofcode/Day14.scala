@@ -16,7 +16,7 @@ object Day14 {
   }
 
   def partOne(speeds: Map[String, (Int, Int, Int)], time: Int): Int = {
-    val distCovered = speeds.map { case (deer, (speed, active, inactive)) =>
+    speeds.map { case (deer, (speed, active, inactive)) =>
       val cycle = active + inactive
       val times = time / cycle
       val left = time % cycle
