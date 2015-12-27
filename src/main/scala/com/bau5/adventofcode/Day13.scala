@@ -20,7 +20,7 @@ object Day13 {
           }.sum + mapped(combos.last, combos.head) + mapped(combos.head, combos.last)
       }.max
     println(findBest(guests))
-    println(findBest(guests ++ List("You")))
+    println(findBest("You" :: guests))
   }
 
   val inputTest =
