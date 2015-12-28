@@ -19,9 +19,8 @@ object Day15 {
               .map(o => o._2.map(_ * o._1))
             val mult = zip4(adjusted.head, adjusted(1), adjusted(2), adjusted.last)
               .map { case (e, f, g, h) => List(0, e + f + g + h).max }
-              .dropRight(1)
-              .product
-            max = List(max, mult).max
+            val use = if (mult.last == 500) mult.dropRight(1).product else 0
+            max = List(max, use).max
           }
         }
       }
