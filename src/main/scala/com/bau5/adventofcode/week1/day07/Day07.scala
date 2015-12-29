@@ -1,4 +1,4 @@
-package com.bau5.adventofcode.day07
+package com.bau5.adventofcode.week1.day07
 
 import scala.collection.mutable
 import com.bau5.adventofcode._
@@ -6,14 +6,14 @@ import com.bau5.adventofcode._
 /**
   * Created by Rick on 12/19/15.
   */
-object Day07 {
+object Day07 extends Advent {
   type UnsignedShort = Char
   var wires = mutable.HashMap.empty[String, Wire]
 
   def main(args: Array[String]) {
 
     def calculate() {
-      var deferred = getInput(getClass).map(interpret)
+      var deferred = dayInput.map(interpret)
       while (deferred.nonEmpty) {
         deferred = deferred.foldLeft(List.empty[Assignment]) { (list, assignment) =>
           val ready = assignment.getAllWires.forall(wires.contains)

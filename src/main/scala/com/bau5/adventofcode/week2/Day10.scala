@@ -1,11 +1,13 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week2
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/25/15.
   */
-object Day10 {
+object Day10 extends Advent {
   def main(args: Array[String]) {
-    val input = getInput(getClass).head
+    val input = dayInput.head
     def lookAndSay(in: String): String = {
       val ret = in.drop(1).toList.foldLeft(("", in.head.toString)) { case ((all, current), char) =>
         if (char == current.head) {

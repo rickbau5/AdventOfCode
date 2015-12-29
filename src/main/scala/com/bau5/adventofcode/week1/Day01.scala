@@ -1,11 +1,13 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week1
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/18/15.
   */
-object Day01 {
+object Day01 extends Advent {
   def main (args: Array[String]): Unit = {
-    val input = getInput(getClass)
+    val input = dayInput
     println("Sum is " + sum(input.head))
     println("Basement at " + toBasement(input.head))
   }

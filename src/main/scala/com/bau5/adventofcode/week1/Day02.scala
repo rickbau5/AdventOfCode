@@ -1,11 +1,13 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week1
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/18/15.
   */
-object Day02 {
+object Day02 extends Advent {
   def main(args: Array[String]) {
-    val input = getInput(getClass)
+    val input = dayInput
     println("Wrapping paper needed: " + calculatePaperUsed(input))
     println("Wrapping paper needed: " + calculateRibbonNeeded(input))
   }

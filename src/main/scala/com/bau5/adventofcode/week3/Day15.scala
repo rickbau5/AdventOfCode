@@ -1,13 +1,15 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week3
+
+import com.bau5.adventofcode.Advent
 
 /**
   * Created by Rick on 12/27/15.
   */
-object Day15 {
+object Day15 extends Advent {
 
   def main(args: Array[String]): Unit = {
     val regex = raw"(.+): capacity (.+), durability (.+), flavor (.+), texture (.+), calories (.+)".r
-    val ingredients = getInput(getClass).map {
+    val ingredients = dayInput.map {
       case regex(ingred, cap, dur, flavor, tex, cal) => List(cap.toInt, dur.toInt, flavor.toInt, tex.toInt, cal.toInt)
     }
     var max = 0

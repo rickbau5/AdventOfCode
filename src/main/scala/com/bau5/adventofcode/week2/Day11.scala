@@ -1,13 +1,15 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week2
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/25/15.
   */
-object Day11 {
+object Day11 extends Advent {
   val bad = List('i', 'o', 'l')
 
   def main(args: Array[String]): Unit = {
-    val input = getInput(getClass).head
+    val input = dayInput.head
 
     def find(string: String): String = validPassword(string) match {
       case false => find(increment(string))

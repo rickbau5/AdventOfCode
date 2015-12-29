@@ -1,12 +1,14 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week1
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/18/15.
   */
-object Day03 {
+object Day03 extends Advent {
   type Pos = (Int, Int)
   def main(args: Array[String]) {
-    val input = getInput(getClass).head
+    val input = dayInput.head
 
     println(s"Visited ${santaNavigate(input, (0,0), Seq((0,0))).size} houses")
     println(s"Visited ${santaAndRoboNavigate(input, ((0,0), (0,0)), Seq((0,0))).size} houses")

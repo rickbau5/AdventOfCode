@@ -1,11 +1,13 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week2
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/20/15.
   */
-object Day08 {
+object Day08 extends Advent {
   def main(args: Array[String]) {
-    val input = getInput(getClass)
+    val input = dayInput
     val decoded = decode(input)
     val encoded = encode(input)
 

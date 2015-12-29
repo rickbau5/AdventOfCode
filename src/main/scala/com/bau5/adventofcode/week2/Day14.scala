@@ -1,13 +1,15 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week2
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/26/15.
   */
-object Day14 {
+object Day14 extends Advent {
   def main(args: Array[String]) {
     val regex = raw"(.+) can fly (.+) km/s for (.+) seconds, but then must rest for (.+) seconds.".r
 
-    val speeds = getInput(getClass).map {
+    val speeds = dayInput.map {
       case regex(name, speed, active, inactive) => name -> (speed.toInt, active.toInt, inactive.toInt)
     }.toMap
 

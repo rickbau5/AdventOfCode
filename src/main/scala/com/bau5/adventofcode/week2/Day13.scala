@@ -1,12 +1,14 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week2
+
+import com.bau5.adventofcode._
 
 /**
   * Created by Rick on 12/25/15.
   */
-object Day13 {
+object Day13 extends Advent {
   def main(args: Array[String]) {
     val regex = raw"(.+) would (.+) (.+) happiness units by sitting next to (.+).".r
-    val mapped = getInput(getClass).map {
+    val mapped = dayInput.map {
       case regex(name, disposition, units, neighbor) =>
         (name, neighbor) -> units.toInt * { if (disposition == "gain") 1 else -1 }
     }.toMap.withDefaultValue(0)

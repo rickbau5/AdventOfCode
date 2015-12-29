@@ -1,14 +1,15 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week1
 
-import scala.collection.mutable.ListBuffer
+import com.bau5.adventofcode._
+
 import scala.util.Try
 
 /**
   * Created by Rick on 12/18/15.
   */
-object Day05 {
+object Day05 extends Advent {
   def main(args: Array[String]) {
-    val input = getInput(getClass)
+    val input = dayInput
 
     def checkNiceness(in: Seq[String])(func: (String) => Boolean): Int = {
       input.foldLeft(0) { (sig, string) =>

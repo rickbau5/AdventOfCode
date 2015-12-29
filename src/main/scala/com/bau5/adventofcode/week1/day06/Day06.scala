@@ -1,7 +1,7 @@
-package com.bau5.adventofcode.day06
+package com.bau5.adventofcode.week1.day06
 
 import com.bau5.adventofcode._
-import com.bau5.adventofcode.day06.Day06.Grid
+import com.bau5.adventofcode.week1.day06.Day06.Grid
 
 import scala.collection.mutable
 
@@ -9,10 +9,10 @@ import scala.collection.mutable
 /**
   * Created by Rick on 12/19/15.
   */
-object Day06 {
+object Day06 extends Advent {
   type Grid = mutable.Map[(Int, Int), Int]
   def main(args: Array[String]) {
-    val statements = getInput(getClass)
+    val statements = dayInput
 
     def calculate(lines: Seq[String])(func: (String, Grid) => Grid) =
       lines.foldLeft(mutable.Map.empty[(Int, Int), Int])((grid, statement) => func(statement, grid)).values.sum

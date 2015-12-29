@@ -1,14 +1,16 @@
-package com.bau5.adventofcode
+package com.bau5.adventofcode.week1
 
 import java.security.MessageDigest
+
+import com.bau5.adventofcode._
 
 
 /**
   * Created by Rick on 12/18/15.
   */
-object Day04 {
+object Day04 extends Advent {
   def main(args: Array[String]): Unit = {
-    val input = getInput(getClass).head
+    val input = dayInput.head
     val digestor = MessageDigest.getInstance("MD5")
     println("The number with \'00000\' prefix is " + findNumber("000000", digestor))
     println("The number with \'000000\' prefix is " + findNumber("0000000", digestor))
